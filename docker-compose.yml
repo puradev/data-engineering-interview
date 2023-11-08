@@ -7,3 +7,5 @@ services:
       - .:/app
     stdin_open: true 
     tty: true
+    env_file:
+      - local_env.env
