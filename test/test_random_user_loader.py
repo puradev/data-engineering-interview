@@ -1,9 +1,8 @@
-import json
 from unittest import mock
 import pytest
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) #ill admit, i was having trouble with pathing, classic python
 
 from app.random_user_loader import RandomUserLoader
 
