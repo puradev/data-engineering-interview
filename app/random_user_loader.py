@@ -1,7 +1,7 @@
 from requests import Response, Session, exceptions as re
 import json
 import os
-
+import logging
 endpoint_url = os.environ["RANDO_API_URL"]
 
 
@@ -9,11 +9,13 @@ class RandomUserLoader:
     def _get_users_json(self, url: str) -> list[dict]:
         new_session = Session()
         try:
+            logging.info("Requesting user list from server")
             response = new_session.get(url=url)
         except re.HTTPError as e:
-            return "Encountered Error Response From Server: " + str(e)
+            logging.error(f"Encountered Error Response From Server: {e}")
+            return f"Encountered Error Response From Server: {e} " 
         response = response.json()
-        print(response.get("info").get("seed") + " "+response.get("info").get("page"))
+        logging.info("user list retrived")
         return response["results"]
 
     def _parse_user_json(self, user: dict) -> dict:
@@ -29,10 +31,15 @@ class RandomUserLoader:
 
         return user_dict
 
-    def _write_user_results_file(self, url):
+    def _write_user_results_file(self, url, path: str = 'app/local_data'):
         users = self._get_users_json(url=url)
 
-        with open("./user_information.json", "w", encoding="utf-8") as user_file:
+        logging.info("writing user list to /user_information.json")
+
+        # Ensure that the target directory exists, create it if not
+        os.makedirs(path, exist_ok=True)
+
+        with open(f"{path}/user_information.json", "w", encoding="utf-8") as user_file:
             for user in users:
                 user_dict = self._parse_user_json(user)
                 user_json = json.dumps(user_dict, ensure_ascii=False)
