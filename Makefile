@@ -10,7 +10,6 @@ down:
 # Define the target for opening a shell
 .PHONY: shell
 shell:
-	docker-compose up -d
 	docker exec -it $(shell docker-compose ps -q app) /bin/bash
 
 .PHONY: build
