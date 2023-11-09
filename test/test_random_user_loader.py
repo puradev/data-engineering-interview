@@ -48,11 +48,11 @@ def test_write_user_results_file(mock_get_users_json, random_user_loader, tmp_pa
         }
     ]
 
-    # Call the _write_user_results_file method with tmp_path as the base path
+    # Call the _write_user_results_file method with test/local_data as the base path
     url = 'https://example.com/api/users'
     random_user_loader._write_user_results_file(url, path='test/local_data')
 
-    # Check if the file was created and contains expected content
+    # Check if the file was created 
     assert os.path.exists('test/local_data/user_information.json') == True
 
    
