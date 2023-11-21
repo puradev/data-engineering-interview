@@ -40,12 +40,11 @@
 8. Extensibility of the code kept in mind.
 
 ### Submission Guidelines:
-1. Fork this repository.
-2. Create a new branch in your forked repository to work on the assignment.
-3. Commit your code changes to the branch.
-4. Include any necessary instructions or setup details in a separate Markdown file.
-5. Once you have completed the task, submit a pull request from your branch to the main repository.
-6. You have **five** (5) full business days to work on this (e.g. Receive on: Monday@12pm -> Submit by: Monday@12pm)
+1. Clone this repository locally.
+2. Place your folders and files in a ZIP folder.
+3. Send an email to data.engineering@pura.com with the ZIP folder attached.
+4. Please let your company contact or recruiter know that you've finished the exercise.
+5. You have **five** (5) full business days to work on this (e.g. Receive on: Monday@12pm -> Submit by: Monday@12pm)
 
 ### Some Notes on Time:
 - You're free to use as much time as you deem necessary to work on this within the assignment window. Please note, however, a marquee skill in software engineering is being aware of diminishing marginal returns, i.e. knowing when to stop.
