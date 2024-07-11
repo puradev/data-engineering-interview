@@ -1,4 +1,4 @@
-# Spartan Senior Data Engineer Test
+# Data Engineer Test
 
 ## Overview
 
